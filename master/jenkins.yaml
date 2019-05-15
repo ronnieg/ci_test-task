@@ -1,0 +1,51 @@
+jenkins:
+unclassified:
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+    - name: "sonarqube_scanner"
+      serverUrl: "http://192.168.56.101:9000"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+
+
+tool:
+  jdk:
+    installations:
+    - name: "JDK"
+  msBuildSQRunnerInstallation:
+    defaultProperties:
+    - installSource:
+        installers:
+        - "msBuildSonarQubeRunnerInstaller"
+    installations:
+    - name: "sonarqube_scanner_msbuild"
+      properties:
+      - installSource:
+          installers:
+          - msBuildSonarQubeRunnerInstaller:
+              id: "4.6.0.1930"
+  sonarRunnerInstallation:
+    defaultProperties:
+    - installSource:
+        installers:
+        - "sonarRunnerInstaller"
+    installations:
+    - name: "sonarqube_scanner"
+      properties:
+      - installSource:
+          installers:
+          - sonarRunnerInstaller:
+              id: "3.3.0.1492"
+
+jobs:
+  - script: >
+      workflowJob('jenkins_pipeline') {
+          branchSources {
+              git {
+                  id = 'master'
+                  remote('https://github.com/AndreyNovik1993/ci_test-task.git')
+              }
+          }
+      }
