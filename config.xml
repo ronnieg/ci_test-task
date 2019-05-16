@@ -1,5 +1,3 @@
-
-
 <project>
 <actions/>
 <description/>
@@ -7,7 +5,24 @@
 <properties>
 <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.0.7"/>
 </properties>
-<scm class="hudson.scm.NullSCM"/>
+<scm class="hudson.plugins.git.GitSCM" plugin="git@3.10.0">
+<configVersion>2</configVersion>
+<userRemoteConfigs>
+<hudson.plugins.git.UserRemoteConfig>
+<url>
+https://github.com/AndreyNovik1993/ci_test-task.git
+</url>
+</hudson.plugins.git.UserRemoteConfig>
+</userRemoteConfigs>
+<branches>
+<hudson.plugins.git.BranchSpec>
+<name>*/master</name>
+</hudson.plugins.git.BranchSpec>
+</branches>
+<doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+<submoduleCfg class="list"/>
+<extensions/>
+</scm>
 <canRoam>true</canRoam>
 <disabled>false</disabled>
 <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -16,31 +31,9 @@
 <concurrentBuild>false</concurrentBuild>
 <builders>
 <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.74">
-<scriptText>
-folder('job_dsl') { 
-
-   description('folder for pipeline job')
-  
-}
-pipelineJob('job_dsl/pipeline') {
-      def repo = 'https://github.com/AndreyNovik1993/ci_test-task.git' 
-      description("Pipeline for $repo") 
-      definition { 
-          cpsScm { 
-             scm { 
-               git { remote { url(repo) } 
-               branches('master', '**/feature*') 
-               scriptPath('Jenkinsfile') 
-               extensions { } 
-		}
-	   } 
-	} 
-     } 
-queue('job_dsl/pipeline')
-}
-
-</scriptText>
-<usingScriptText>true</usingScriptText>
+<targets>/jobs/test.groovy</targets>
+<scriptText>queue('job_dsl/pipeline')</scriptText>
+<usingScriptText>false</usingScriptText>
 <sandbox>false</sandbox>
 <ignoreExisting>false</ignoreExisting>
 <ignoreMissingFiles>false</ignoreMissingFiles>
@@ -56,3 +49,4 @@ queue('job_dsl/pipeline')
 <publishers/>
 <buildWrappers/>
 </project>
+

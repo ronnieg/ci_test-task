@@ -4,5 +4,5 @@ if [ $? -eq 0 ] ;
   then echo 'job add in jenkins and create pipeline'
   curl -X POST http://admin:admin@localhost:8080/job/seed/build
 else 
-   echo 'jon don't add jenkins' 
+   echo 'jon do not add jenkins' 
 fi
