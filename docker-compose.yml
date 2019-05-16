@@ -2,26 +2,21 @@ version: '3.1'
 services:
      jenkins:
         build: master
-        #container_name: jenkins
         ports:
             - '8080:8080'
             - '50000:50000'
-        #image: "jenkins-master"
 
      slave:
-        #container_name: jenkins-slave
         build: slave
         restart: always
         environment:
             - 'JENKINS_URL=http://jenkins:8080'
-        #image: "jenkins-slave"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         depends_on:
             - jenkins
 
      sonarqube:
-        #container_name: sonarqube
         build: sonarqube
         ports:
            - '9000:9000'
@@ -31,7 +26,6 @@ services:
   
      artifactory:
         image: docker.bintray.io/jfrog/artifactory-oss:latest
-        #container_name: artifactory
         ports:
            - '8081:8081'
         #volumes:
