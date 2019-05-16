@@ -1,4 +1,15 @@
 jenkins:
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  downloadSettings:
+    useBrowser: false
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+  sSHD:
+    port: -1
 unclassified:
   sonarGlobalConfiguration:
     buildWrapperEnabled: true

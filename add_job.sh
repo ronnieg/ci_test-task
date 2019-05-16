@@ -3,6 +3,11 @@ curl -s -XPOST 'http://localhost:8080/createItem?name=seed' -u admin:admin  --da
 if [ $? -eq 0 ] ;  
   then echo 'job add in jenkins and create pipeline'
   curl -X POST http://admin:admin@localhost:8080/job/seed/build
+  if [ $? -eq 0 ]
+    then echo 'job seeb will work  after 4s' 
+  else
+    curl -X POST http://admin:admin@localhost:8080/job/seed/build
+  fi
 else 
    echo 'jon do not add jenkins' 
 fi
