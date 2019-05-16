@@ -39,13 +39,3 @@ tool:
           - sonarRunnerInstaller:
               id: "3.3.0.1492"
 
-jobs:
-  - script: >
-      workflowJob('jenkins_pipeline') {
-          branchSources {
-              git {
-                  id = 'master'
-                  remote('https://github.com/AndreyNovik1993/ci_test-task.git')
-              }
-          }
-      }
