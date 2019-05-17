@@ -23,7 +23,7 @@ pipeline {
             
             steps { 
                 withSonarQubeEnv('sonarqube_scanner') {
-                    sh "${scannerHome}/bin/sonar-scanner -X  -Dsonar.host.url=http://192.168.56.101:9000  -Dsonar.language=c++ -Dsonar.projectName=test -Dsonar.lang.patterns.c++=**/*.cpp,**/*.h -Dsonar.projectVersion=1.1 -Dsonar.projectKey=My_project -Dsonar.lang.patterns.c=**/*.c,**/*.h -Dsonar.sources=src -Dsonar.projectBaseDir=/home/jenkins/workspace/test_c++ -Dsonar.tests=. -Dsonar.test.inclusions=**/*Test*/** -Dsonar.exclusions=**/*Test*/**"
+                    sh "${scannerHome}/bin/sonar-scanner -X  -Dsonar.host.url=http://192.168.56.101:9000  -Dsonar.language=c++ -Dsonar.projectName=test -Dsonar.lang.patterns.c++=**/*.cpp,**/*.h -Dsonar.projectVersion=1.1 -Dsonar.projectKey=My_project -Dsonar.lang.patterns.c=**/*.c,**/*.h -Dsonar.sources=src -Dsonar.tests=. -Dsonar.test.inclusions=**/*Test*/** -Dsonar.exclusions=**/*Test*/**"
                 }
             }
         }
