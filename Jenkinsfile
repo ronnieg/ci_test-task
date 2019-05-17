@@ -27,6 +27,16 @@ pipeline {
                 }
             }
         }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    // Requires SonarQube Scanner for Jenkins 2.7+
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         stage("Push Artifactory") {
             steps { 
                 sh 'curl -u admin:password -T build/GameMenu/GameMenu.o "http://192.168.56.101:8081/artifactory/example-repo-local/"'
