@@ -29,6 +29,7 @@ pipeline {
         }
         stage("Quality Gate") {
             steps {
+                sh 'curl "http://admin:admin@sonarqube:9000/api/webhooks/create" -X POST -d "name=jenkins&url=http://jenkins:8080/sonarqube-webhook/"'
                 timeout(time: 1, unit: 'MINUTES') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
