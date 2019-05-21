@@ -12,4 +12,5 @@ All workflow watched in http://localhost:8080/blue/organizations/jenkins/job_dsl
 
 
 Config for creating seed job save in file -> config.xml 
+
 Config for creating pipeline job save in file -> jobs/pipeline.groovy
