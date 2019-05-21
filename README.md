@@ -77,10 +77,10 @@ All documentation for your project has to be put into README.md file and written
 ## Solution - Jenkins auto build with creating seed job, and reading Jenkinsfile
 
 # For install and runing project do next steps: 
-1. Clone git repository: git clone https://github.com/AndreyNovik1993/ci_test-task.git
-2. Install docker on your enviroment
-3. Run command "docker-compose -f docker-compose.yml up -d"  in directory when git cloned
-4. After complited docker-compose command wait several minutes until all docker enviroment start 
+1. Clone git repository: git clone https://github.com/AndreyNovik1993/ci_test-task.git.
+2. Install docker on your enviroment.
+3. Run command "docker-compose -f docker-compose.yml up -d"  in directory when git cloned.
+4. After complited docker-compose command wait several minutes until all docker enviroment start.
 5. Run commnad ./add_job.sh seed job will be create after 5s and after creating pipeline job will run once.
 
 P.S If you have problems with runing pipeline on stage (SonarQube), waiting more time and restart script ./add_job.sh gain. 
@@ -88,7 +88,5 @@ P.S If you have problems with runing pipeline on stage (SonarQube), waiting more
 If you want see resolts for sonarqube visit page http://localhost:9000, artifactory with build http://localhost:8081. 
 All workflow watched on link http://localhost:8080/job/job_dsl/job/pipeline/
 
-
 Config for creating seed job saved in file -> config.xml 
-
 Config for creating pipeline job saved in file -> jobs/pipeline.groovy
