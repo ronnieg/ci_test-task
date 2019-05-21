@@ -15,6 +15,6 @@ pipelineJob('job_dsl/pipeline') {
                extensions { } 
 		}
 	 } 
-	} 
- } 
+      } 
+   } 
 }
