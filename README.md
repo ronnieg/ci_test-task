@@ -11,6 +11,6 @@ If you want see resolts for sonarqube visit page http://localhost:9000, artifact
 All workflow watched in http://localhost:8080/blue/organizations/jenkins/job_dsl%2Fpipeline/detail/pipeline/1/pipeline or http://localhost:8080/job/job_dsl/job/pipeline/
 
 
-Config for creating seed job save in file -> config.xml 
+Config for creating seed job saved in file -> config.xml 
 
-Config for creating pipeline job save in file -> jobs/pipeline.groovy
+Config for creating pipeline job saved in file -> jobs/pipeline.groovy
