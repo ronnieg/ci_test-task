@@ -17,4 +17,5 @@ pipelineJob('job_dsl/pipeline') {
 	 } 
       } 
    } 
+queue('job_dsl/pipeline')
 }
