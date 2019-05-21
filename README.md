@@ -86,7 +86,6 @@ All documentation for your project has to be put into README.md file and written
 P.S If you have problems with runing pipeline on stage (SonarQube), waiting more time and restart script ./add_job.sh gain. 
 
 If you want see resolts for sonarqube visit page http://localhost:9000, artifactory with build http://localhost:8081. 
-All workflow watched on link http://localhost:8080/job/job_dsl/job/pipeline/
+All workflow watched on link http://localhost:8080/job/job_dsl/job/pipeline/ or http://192.168.56.101:8080/blue/organizations/jenkins/job_dsl%2Fpipeline/detail/pipeline/1/pipeline
 
-Config for creating seed job saved in file -> config.xml 
-Config for creating pipeline job saved in file -> jobs/pipeline.groovy
+Config for creating seed job saved in file -> config.xml, config for creating pipeline job saved in file -> jobs/pipeline.groovy
