@@ -7,14 +7,14 @@ pipelineJob('job_dsl/pipeline') {
       def repo = 'https://github.com/AndreyNovik1993/ci_test-task.git' 
       description("Pipeline for $repo") 
       definition { 
-          cpsScm { 
-             scm { 
-               git { remote { url(repo) } 
-               branches('master') 
-               scriptPath('Jenkinsfile') 
-               extensions { } 
-		}
-	 } 
+           cpsScm { 
+               scm { 
+                 git { remote { url(repo) } 
+                   	branches('master') 
+               	   	scriptPath('Jenkinsfile') 
+                    	extensions { } 
+		    }
+	  } 
       } 
    } 
 queue('job_dsl/pipeline')
