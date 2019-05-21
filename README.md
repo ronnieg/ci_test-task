@@ -10,7 +10,7 @@
 P.S If you have problems with runing pipeline on stage (SonarQube), waiting more time and restart script ./add_job.sh gain. 
 
 If you want see resolts for sonarqube visit page http://localhost:9000, artifactory with build http://localhost:8081. 
-All workflow watched in http://localhost:8080/blue/organizations/jenkins/job_dsl%2Fpipeline/detail/pipeline/1/pipeline or http://localhost:8080/job/job_dsl/job/pipeline/
+All workflow watched on link http://localhost:8080/job/job_dsl/job/pipeline/
 
 
 Config for creating seed job saved in file -> config.xml 
