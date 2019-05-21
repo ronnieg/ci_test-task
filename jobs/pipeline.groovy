@@ -10,7 +10,7 @@ pipelineJob('job_dsl/pipeline') {
           cpsScm { 
              scm { 
                git { remote { url(repo) } 
-               branches('master', '**/feature*') 
+               branches('master') 
                scriptPath('Jenkinsfile') 
                extensions { } 
 		}
